@@ -102,7 +102,8 @@ shipping_cost_chart = px.bar(data, x = "Shipping carriers", y = "Shipping costs"
 
 shipping_cost_chart.show()
 
-#COMMENT: Though Carrier B helps the company generate the most revenue, it can be seen that it is the most expensive among the three carriers. The reason that it is most sought can be its popularity, positive reviews, etc.
+#COMMENT: Though Carrier B helps the company generate the most revenue, it can be seen that it is the most expensive among the three carriers.
+# The reason that it is most sought can be its popularity, positive reviews, etc.
 
 #Cost and Mode of Transportation distribution
 
@@ -110,5 +111,17 @@ transportation_chart = px.pie(data, values = "Shipping costs", names = "Transpor
 
 transportation_chart.show()
 
-#COMMENT: From the plot, we observe that shipping costs are distributed mostly among Road, Air and the next in line is shipping costs of Rail. The company spends the least on transportation by sea.
+#COMMENT: From the plot, we observe that shipping costs are distributed mostly among Road, Air and the next in line is shipping costs of Rail.
+# The company spends the least on transportation by sea.
 
+#Defect Rate Analysis
+
+defect_rates_by_product = data.groupby('Product type')['Defect rates'].mean().reset_index()
+
+defect_rate_chart = px.bar(defect_rates_by_product, x = "Product type", y = "Defect rates", title = "Defect rate by Product Type")
+
+defect_rate_chart.show()
+
+#COMMENT: It can be observed that the defect rate is the highest in haircare products. From the previous analysis, we know the haircare products do not contribute to the revenue that much.
+# Along with that, the average lead time and average manufacturing costs of haircare products is on the higher end.
+# The company should make a business decision about looking into how to make the haircare products less defective or generating more revenue.
