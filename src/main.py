@@ -118,10 +118,21 @@ transportation_chart.show()
 
 defect_rates_by_product = data.groupby('Product type')['Defect rates'].mean().reset_index()
 
-defect_rate_chart = px.bar(defect_rates_by_product, x = "Product type", y = "Defect rates", title = "Defect rate by Product Type")
+defect_rate_chart = px.bar(defect_rates_by_product, x = "Product type", y = "Defect rates", title = "Average Defect Rates by Product Type")
 
 defect_rate_chart.show()
 
 #COMMENT: It can be observed that the defect rate is the highest in haircare products. From the previous analysis, we know the haircare products do not contribute to the revenue that much.
 # Along with that, the average lead time and average manufacturing costs of haircare products is on the higher end.
 # The company should make a business decision about looking into how to make the haircare products less defective or generating more revenue.
+
+#Defect Rates by Mode of transportation
+
+defect_rates_by_transportation = pd.pivot_table(data, values = 'Defect rates', index = ['Transportation modes'], aggfunc = 'mean')
+
+defect_rate_transport_chart = px.pie(values = defect_rates_by_transportation['Defect rates'], names = defect_rates_by_transportation.index, title = "Defect Rates by Transportation Mode", hole = 0.5, color_discrete_sequence = px.colors.qualitative.Pastel)
+
+defect_rate_transport_chart.show()
+
+#COMMENT: This shows that even though the company spends almost equally on transportation modes like Road and Air, the defect rates in both these modes are on the extreme sides of the range.
+# The defect rate is lowest for Air transportation and highest on the Road transportation.
