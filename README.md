@@ -18,7 +18,7 @@ This project focuses on analyzing a supply chain dataset using various data visu
 ### Revenue Analysis by Product Type:
 - To visualize the relationship between price and revenue generated.
 
-![Revenue Analysis by Product Type](./output/1_Revenue_Analysis_by_Product_Type.jpg)
+![Revenue Analysis by Product Type](output/1_Revenue_Analysis_by_Product_Type.JPG)
 
 ### Sales Data by Product Type:
 - To visualize the distribution of sales by product type.
