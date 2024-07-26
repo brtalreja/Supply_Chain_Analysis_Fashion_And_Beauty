@@ -174,4 +174,26 @@ route_efficiency_chart.show()
 #COMMENT: Route C costs the lowest and the defect rate is also lowest on Route C. On both the other routes, the defect rate is comparatively higher.
 # With route B, the company is losing on costs as well as the defect rate is marginally away from the highest defect rate. Company should look into it.
 
-#
+#Correlation Analysis
+
+numerical_data = data.select_dtypes(include=['float64', 'int64'])
+
+correlation_matrix = numerical_data.corr()
+
+heatmap = px.imshow(correlation_matrix, title = "Correlation Matrix")
+
+heatmap.show()
+
+encoded_data = pd.get_dummies(data, drop_first=True)
+
+correlation_matrix = encoded_data.corr()
+
+strong_corr = correlation_matrix[(correlation_matrix > 0.5) | (correlation_matrix < -0.5)]
+
+heatmap = px.imshow(strong_corr, title = "Correlation Matrix")
+
+heatmap.show()
+
+#COMMENT: Correlation analysis is inconclusive due to either lack of strong correlations or the presence of many weak correlations that are insignificant.
+# It tells us that not every analysis is always useful.
+
