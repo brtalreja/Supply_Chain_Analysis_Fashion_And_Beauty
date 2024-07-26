@@ -1,4 +1,4 @@
-# Supply Chain Analysis Using Data Visualization
+# Supply Chain Analysis Fashion And Beauty (Using Python)
 
 ## Overview
 
@@ -89,9 +89,9 @@ This project focuses on analyzing a supply chain dataset using various data visu
 
 ## Conclusion
 
-This project successfully analyzes a supply chain dataset of a Fashion and Beauty company using various data visualization techniques, providing insights into different aspects of the supply chain.
+This project builds on the foundational work provided in The Clever Programmer's Supply Chain Analysis by expanding the analysis to provide deeper insights into various aspects of the supply chain.
 
 ## References:
-- Supply Chain Data
-- Project Reference
-- Supply Chain Overview
+1. [Supply Chain Data](https://statso.io/supply-chain-analysis-case-study/)
+2. [Project Reference](https://thecleverprogrammer.com/2023/04/03/supply-chain-analysis-using-python/)
+3. [Supply Chain Overview](https://thecleverprogrammer.com/2023/03/09/how-data-science-is-used-for-supply-chain-management/)
