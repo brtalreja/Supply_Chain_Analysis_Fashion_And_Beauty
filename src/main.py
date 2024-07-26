@@ -197,3 +197,10 @@ heatmap.show()
 #COMMENT: Correlation analysis is inconclusive due to either lack of strong correlations or the presence of many weak correlations that are insignificant.
 # It tells us that not every analysis is always useful.
 
+#Geographical Analysis
+
+geographical_data = data.groupby('Location').agg({'Revenue generated': 'sum', 'Defect rates': 'mean'}).reset_index()
+
+geographical_data_chart = px.choropleth(geographical_data, locations = 'Location', locationmode = 'city names', color = "Revenue generated", hover_name = 'Location', title = "Revenue Geographical Analysis")
+
+geographical_data_chart.show()
