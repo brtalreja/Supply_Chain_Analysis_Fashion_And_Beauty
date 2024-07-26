@@ -163,3 +163,15 @@ print(unknown_location)
 #COMMENT: 31% of the data belongs to the Unknown demographics. We can see people in that demographics bought more haircare products and not cosmetics or skincare, which might mean that there are more males.
 # or equal distribution as both males and females use haircare products, whereas a more common usage of skincare and cosmetics are seen in females.
 
+#Route Efficiency Analysis
+
+route_efficiency = data.groupby('Routes').agg({'Costs': 'mean', 'Defect rates': 'mean'}).reset_index()
+
+route_efficiency_chart = px.scatter(route_efficiency, x = "Costs", y = "Defect rates", size = "Defect rates", hover_name = "Routes", title = "Route Efficiency")
+
+route_efficiency_chart.show()
+
+#COMMENT: Route C costs the lowest and the defect rate is also lowest on Route C. On both the other routes, the defect rate is comparatively higher.
+# With route B, the company is losing on costs as well as the defect rate is marginally away from the highest defect rate. Company should look into it.
+
+#
