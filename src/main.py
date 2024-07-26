@@ -94,4 +94,14 @@ order_quantity_chart = px.bar(top_sku_order_data, x = "SKU", y = "Order quantiti
 
 order_quantity_chart.show()
 
-#COMMENT: 
+#COMMENT: This gave us an analysis of which 10 SKUs are most profitable, which 10 SKUs stock levels are always good, and which 10 SKUs are ordered the most.
+
+#Carrier Shipping Cost Analysis
+
+shipping_cost_chart = px.bar(data, x = "Shipping carriers", y = "Shipping costs", title = "Shipping Costs by Carrier")
+
+shipping_cost_chart.show()
+
+#COMMENT: Though Carrier B helps the company generate the most revenue, it can be seen that it is the most expensive among the three carriers. The reason that it is most sought can be its popularity, positive reviews, etc.
+
+#
