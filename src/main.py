@@ -104,4 +104,11 @@ shipping_cost_chart.show()
 
 #COMMENT: Though Carrier B helps the company generate the most revenue, it can be seen that it is the most expensive among the three carriers. The reason that it is most sought can be its popularity, positive reviews, etc.
 
-#
+#Cost and Mode of Transportation distribution
+
+transportation_chart = px.pie(data, values = "Shipping costs", names = "Transportation modes", title = "Cost Distribution by Transportation Mode", hole = 0.5, color_discrete_sequence = px.colors.qualitative.Pastel)
+
+transportation_chart.show()
+
+#COMMENT: From the plot, we observe that shipping costs are distributed mostly among Road, Air and the next in line is shipping costs of Rail. The company spends the least on transportation by sea.
+
